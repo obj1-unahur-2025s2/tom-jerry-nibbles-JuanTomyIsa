@@ -9,6 +9,13 @@ var energia = 50
       energia = 0.max(energia - unaCantidad/2)
     }
 
+    method cazar(unRaton,unaDistancia) {
+      if (self.puedeCazar(unaDistancia))
+      self.correr(unaDistancia)
+      self.comer(unRaton)
+    }
+
+    method puedeCazar(unaDistancia) = energia > unaDistancia/2 
     method velocidadMaxima() = 5 + energia/10 
 }
 
@@ -25,4 +32,6 @@ object nibbles {
   method peso() = 35 
 }
 
-// Inventar otro ratón
+object mickey {
+  method peso() = 44 
+}
